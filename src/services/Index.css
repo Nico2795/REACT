@@ -1,0 +1,44 @@
+/* .fondo{
+    background-image: url(/src/assets/img/fondo.jpg);
+    background-size: cover;
+
+} */
+
+body{
+    background-image: url(/src/assets/img/fondo.jpg);
+    background-size: cover;
+}
+
+.container{
+    width: 50%;
+    border-radius: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    flex-direction: column;
+    padding-bottom: 0;
+    
+}
+
+
+.table{
+    color: white;
+
+}
+
+#cAuto{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.tablita{
+    backdrop-filter: blur(10px);
+}
+
+.tablita1{
+    backdrop-filter: blur(10px);
+}
+
+table{
+    border-radius: 20px;
+}
+
