@@ -1,15 +1,17 @@
 import React from "react";
 
 import { BrowserRouter,Routes, Route } from "react-router-dom";
-import { HomePage, AutoPage } from "./pages";
+import { HomePage, AutoPage, MainPage , LoginPage} from "./pages";
 
-
+//Rutas correspondientes a las vistas
 const App = ()=>{
   return (
     <BrowserRouter>
       <Routes>
         <Route path = "/" element={<HomePage/>} />
         <Route path = "/Auto" element={<AutoPage/>} />
+        <Route path = "/Main" element={<MainPage/>} />
+        <Route path = "/Login" element={<LoginPage/>} />
       </Routes>
     </BrowserRouter>
   )
