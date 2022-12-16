@@ -1,0 +1,23 @@
+/* Slider hace referencia al contenedor que tiene la barra deslizante en si  */
+.slider{
+    height: 40px;
+    border: 2px solid rgb(188, 59, 59);
+    border-radius: 20px;
+}
+
+/* Thumb es el elemento con el que vamos a interactuar dentro de la barra del slider, es decir le estamos diciendo que tenga
+una altura un ancho y un color, es decir, que exista */
+.thumb{
+    background-color: rgb(188, 59, 59);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.slider.green{
+    border:2px solid rgb(17, 109, 17);
+}
+.slider.green .thumb{
+    background-color: rgb(12, 91, 65);
+}

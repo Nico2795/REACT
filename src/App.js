@@ -2,6 +2,7 @@ import React from "react";
 
 import { BrowserRouter,Routes, Route } from "react-router-dom";
 import { HomePage, AutoPage, MainPage , LoginPage} from "./pages";
+import Timer from "./pages/Timer";
 
 //Rutas correspondientes a las vistas
 const App = ()=>{

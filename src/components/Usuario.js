@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../services/Index.css";
 import BotonComponent from "./Boton";
 
+//Este se crea cuando el formulario quede vacio o si esta vacio o no
 const initialUsuario = {
   nombre: "",
   apellido: "",

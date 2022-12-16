@@ -7,6 +7,12 @@ import {
   NavComponent,
 } from "../components";
 import "../services/Index.css";
+import Timer from "./Timer";
+import Settings from "./Settings";
+import SettingsContext from "./SettingsContext";
+
+//Mostrar settings del pomodoro
+
 
 
 //Se escriben los datos que irán dentro de la tabla con los mismos parametros que esta tenga. 
@@ -35,6 +41,15 @@ const usuario1 = [
 ];
 
 const HomePage = () => {
+    //Funcion de mostrar TIMER DE POMODORO, le indicamos que showsettings tenga un valor predeterminado de falso que nos servirá para mostrar el timer 
+    //o los settings, linea 116
+    //Cuando estamos viendo el timer y apretamos el boton de settins queremos que nos muestre setting mediante el setShowSettings
+    const [showSettings, setShowSettings] = useState(false);
+    //Como no teniamos algo que nos seteara los minutos creamos un const
+    //como ya estan como state ahora puedo referenciarlos por sus nombres sin nada mas
+    const[workMinutes, setWorkMinutes] = useState(45);
+    const[breakMinutes, setBreakMinutes] = useState(15);
+
     //función que me permite navegar entre paginas, en este caso le estoy diciendo que el handleonclik que asignaré a un boton me lleve a la ventana de autos.
   const navigate = useNavigate();
   const handleOnClick = useCallback(() => navigate("/Auto", {}, [navigate]));
@@ -103,6 +118,20 @@ const HomePage = () => {
           handleOnClick={handleOnClick}
         />
       </div>
+      {/* Si es que showsettings es true muestrame los settings y si no muestrame el timer */}
+      {/* Con el settingscontext queremos proveer workminutes y break, lo que queremos intetar probar ahora dentro del settings  */}
+      <SettingsContext.Provider value={{
+        showSettings,
+        setShowSettings,
+        workMinutes,
+        breakMinutes,
+        //ahora podemos usar estos dos de abajo tanto en settings como en timer
+        setWorkMinutes,
+        setBreakMinutes,
+      }}>
+      {showSettings ? <Settings/> : <Timer/>}
+      </SettingsContext.Provider>
+
     </div>
   );
 };
